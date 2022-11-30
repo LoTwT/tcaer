@@ -1,0 +1,33 @@
+{
+  "name": "tcaer",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.17.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write .",
+    "lint": "prettier -c .",
+    "prepare": "simple-git-hooks",
+    "up": "taze latest -I"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "lint-staged": "^13.0.4",
+    "pnpm": "^7.17.1",
+    "prettier": "^2.8.0",
+    "rollup": "^3.5.0",
+    "simple-git-hooks": "^2.8.1",
+    "taze": "^0.8.4",
+    "typescript": "^4.9.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}
