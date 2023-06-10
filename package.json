@@ -1,33 +1,36 @@
 {
   "name": "tcaer",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.17.1",
+  "packageManager": "pnpm@8.6.1",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
     "prettier": "prettier --write .",
-    "lint": "prettier -c .",
     "prepare": "simple-git-hooks",
     "up": "taze latest -I"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
-    "lint-staged": "^13.0.4",
-    "pnpm": "^7.17.1",
-    "prettier": "^2.8.0",
-    "rollup": "^3.5.0",
+    "@ayingott/eslint-config": "^0.2.3",
+    "eslint": "^8.42.0",
+    "lint-staged": "^13.2.2",
+    "pnpm": "^8.6.1",
+    "prettier": "^2.8.8",
     "simple-git-hooks": "^2.8.1",
-    "taze": "^0.8.4",
-    "typescript": "^4.9.3"
+    "taze": "^0.10.2",
+    "typescript": "^5.1.3"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
   },
   "lint-staged": {
-    "*": [
-      "prettier --write --ignore-unknown"
-    ]
+    "*": "eslint --fix"
+  },
+  "eslintConfig": {
+    "extends": "@ayingott/eslint-config"
   }
 }
